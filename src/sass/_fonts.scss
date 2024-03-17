@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Outfit';
+    src: url('/public/fonts/outfit/Outfit-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Young-Serif';
+    src: url('/public/fonts/young-serif/YoungSerif-Regular.ttf');
+}
+
+@mixin fonting($size, $family, $weight: 400){
+    font: $weight $size $family;
+}

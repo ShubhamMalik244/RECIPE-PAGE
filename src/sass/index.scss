@@ -1,0 +1,107 @@
+@use "./fonts" as *;
+@use "./veriables" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-position: inside;
+}
+
+main {
+  min-height: 100vh;
+
+  .Page {
+    max-width: 1440px;
+    min-width: 375px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+
+    .image {
+      aspect-ratio: 2/1;
+      background: url("/public/images/image-omelette.jpeg") center/cover
+        no-repeat;
+      border-radius: 10px;
+    }
+
+    .sec1 {
+      & > h1 {
+        @include fonting(clamp(2rem, 5vw, 4rem), "Young-Serif");
+      }
+
+      & > p {
+        @include fonting(1.2rem, "Outfit");
+        margin: 2rem 0;
+      }
+
+      .card {
+        padding: 2rem;
+        background: $RoseWhite;
+        border-radius: 10px;
+
+        h2 {
+          @include fonting(1.4rem, "Outfit", 600);
+          color: $DarkRaspberry;
+          margin: 10px 0;
+        }
+      }
+    }
+
+    .sec4 {
+      p {
+        @include fonting(1rem, "Outfit");
+        color: $DarkCharcoal;
+        margin: 20px 0;
+      }
+
+      table {
+        width: 100%;
+
+        tbody {
+          @include fonting(clamp(1rem, 2vw, 1.4rem), "Outfit", 600);
+          color: $DarkCharcoal;
+
+          tr {
+            td {
+              padding: 10px;
+            }
+
+            & :nth-child(2) {
+              color: $Nutmeg;
+            }
+          }
+
+          & > :nth-child(even) {
+            outline: 0.5px solid rgb(216, 215, 215);
+          }
+        }
+      }
+    }
+  }
+}
+
+//COMMON CODE
+.heading2 {
+  @include fonting(2rem, "Young-Serif");
+  color: $Nutmeg;
+}
+
+.flex-box {
+  @include fonting(1rem, "Outfit");
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.bullet {
+  color: $Nutmeg;
+  font-weight: 700;
+}
+
+.li-text {
+  color: $DarkCharcoal;
+  display: inline-block;
+}
